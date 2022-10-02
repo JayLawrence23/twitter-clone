@@ -15,7 +15,6 @@ interface Props {
 
 const Home = ({ tweets}: Props) => {
 
-  console.log(tweets)
   return (
     <div className="lg:max-w-6xl mx-auto max-h-screen overflow-hidden">
       <Head>
@@ -23,7 +22,7 @@ const Home = ({ tweets}: Props) => {
       </Head>
 
       <Toaster/>
-      <main className='grid grid-cols-9'>
+      <main className='grid grid-cols-10'>
         <Sidebar />
 
         {/* Feed */}
