@@ -32,3 +32,5 @@ export interface Comment extends CommentBody {
         _type: 'reference'
     }
 }
+
+type FCC<P = {}> = import("react").FC<import("react").PropsWithChildren<P>>;

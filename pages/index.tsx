@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Toaster } from 'react-hot-toast'
 import Feed from '../components/Feed'
+import Layout from '../components/Layout'
 
 import Sidebar from '../components/Sidebar'
 import Widgets from '../components/Widgets'
@@ -19,17 +20,19 @@ const Home = ({ tweets}: Props) => {
     <div className="lg:max-w-6xl mx-auto max-h-screen overflow-hidden">
       <Head>
         <title>Twitter</title>
+        <link rel="icon" href="/twittericon.png" />
       </Head>
 
       <Toaster/>
-      <main className='grid grid-cols-10'>
-        <Sidebar />
-
+    
+      <Layout>
         {/* Feed */}
         <Feed tweets={tweets} />
-        {/* Widgets */}
-        <Widgets />
-      </main>
+      </Layout>
+
+        
+    
+      
     
     </div>
   )
