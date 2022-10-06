@@ -6,7 +6,6 @@ import {
     ChatBubbleOvalLeftIcon,
     ArrowPathRoundedSquareIcon,
     ArrowUpTrayIcon,
-    ArrowPathIcon
 } from '@heroicons/react/24/outline'
 import { useSession } from 'next-auth/react'
 import { Tweet } from "../../typings";
