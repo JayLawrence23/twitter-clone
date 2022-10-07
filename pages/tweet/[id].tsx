@@ -52,7 +52,7 @@ export const getStaticProps : GetStaticProps = async (context: any) => {
     return {
         props: { tweet: res },
         revalidate: 10,
-    },
+    }
    
 
 }
