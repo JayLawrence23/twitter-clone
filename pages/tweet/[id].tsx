@@ -29,7 +29,7 @@ export const getStaticPaths : GetStaticPaths = async () => {
 
     return {
         paths,
-        fallback:  false
+        fallback:  'blocking'
     }
 }
 
@@ -50,8 +50,10 @@ export const getStaticProps : GetStaticProps = async (context: any) => {
     })
 
     return {
-        props: { tweet: res }
-    }
+        props: { tweet: res },
+        revalidate: 10,
+    },
+   
 
 }
 
