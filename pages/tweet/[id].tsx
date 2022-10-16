@@ -6,11 +6,13 @@ import {
     ChatBubbleOvalLeftIcon,
     ArrowPathRoundedSquareIcon,
     ArrowUpTrayIcon,
+    ArrowSmallLeftIcon
 } from '@heroicons/react/24/outline'
 import { useSession } from 'next-auth/react'
 import { Tweet } from "../../typings";
 import { useState } from "react";
 import { sanityClient } from "../../sanity";
+import Link from 'next/link'
 
 interface Props {
     tweet: Tweet[]
@@ -65,8 +67,14 @@ const Details = ({ tweet }: Props) => {
     return ( 
         <Layout> 
             <div className="col-span-7 lg:col-span-5 border-x max-h-screen overflow-scroll scrollbar-hide">
-                <div className='flex items-center justify-between mb-4'>
-                    <h1 className='p-5 pb-0 text-x1 font-bold'>Tweet</h1>
+                <div className='flex items-center justify-start mb-4 pt-5 pl-4'>
+                    <Link href='/'>
+                        <a>
+                            <ArrowSmallLeftIcon className="h-6 w-6 mr-2 text-twitter" />
+                        </a>
+                    </Link>
+                 
+                    <h1 className='pb-0 text-x1 font-bold'>Tweet</h1>
                    
                 </div>
           
