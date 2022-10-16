@@ -10,6 +10,7 @@ import {
     EllipsisHorizontalCircleIcon
 } from '@heroicons/react/24/outline'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import Link from 'next/link'
 
 import SidebarRow from './SidebarRow'
 
@@ -19,7 +20,9 @@ function Sidebar() {
 
   return (
     <div className='col-span-2 flex flex-col items-center px-4 md:items-start'>
-        <img className='m-3 h-10 w-10' src="https://links.papareact.com/drq" alt="logo" />
+        <Link href="/">
+          <img className='m-3 h-10 w-10' src="https://links.papareact.com/drq" alt="logo" />
+        </Link>
         { session && (
             <>
             <SidebarRow Icon={HomeIcon} title="Home"/>
