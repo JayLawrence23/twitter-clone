@@ -34,7 +34,7 @@ interface Props {
 // }
 
 export const getServerSideProps : GetServerSideProps = async (context: any) => {
-    const id = context.params;
+    const { id } = context.params;
         
     const tweetQuery = `*[_id == $tweetId] {
         _id,
