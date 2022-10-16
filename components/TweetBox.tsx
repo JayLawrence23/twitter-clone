@@ -37,7 +37,7 @@ function TweetBox({ setTweets }: Props) {
         const tweetInfo: TweetBody = {
             text: input,
             username: session?.user?.name || "Unknown User",
-            profileImg: session?.user?.image || 'https://links.papareact.com/gll',
+            profileImg: session?.user?.image || 'https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large',
             image: image,
         }
 
