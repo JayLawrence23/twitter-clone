@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps, GetServerSideProps } from 'next'
 import TimeAgo from 'react-timeago'
 import { 
     HeartIcon,
@@ -33,7 +33,7 @@ export const getStaticPaths : GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps : GetStaticProps = async (context: any) => {
+export const getServerSideProps : GetServerSideProps = async (context: any) => {
     const id = context.params.id;
         
     const tweetQuery = `*[_id == $tweetId] {

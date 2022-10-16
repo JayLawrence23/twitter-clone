@@ -5,6 +5,7 @@ import { Tweet } from '../typings'
 import TweetComponent from './Tweet'
 import { fetchTweets } from '../utils/fetchTweets'
 import toast from 'react-hot-toast'
+import Link from 'next/link'
 
 interface Props {
     tweets: Tweet[]
@@ -40,7 +41,9 @@ function Feed({ tweets: tweetsProp }: Props) {
 
         <div>
             { tweets.map(tweet => (
-                <TweetComponent key={tweet._id} tweet={tweet}/>
+               
+                    <TweetComponent key={tweet._id} tweet={tweet}/>
+               
             )  
             )}
         </div>
