@@ -81,7 +81,7 @@ function Tweet({ tweet }: Props) {
 
                     <div className='flex justify-between mt-5 text-gray-500'>
                         <div 
-                            onClick={() => session && setCommentBoxVisible(!commentBoxVisible)}
+                            onClick={() => setCommentBoxVisible(!commentBoxVisible)}
                             className='flex cursor-pointer items-center space-x-3'
                         >
                             <ChatBubbleOvalLeftIcon className='h-5 w-5' />
