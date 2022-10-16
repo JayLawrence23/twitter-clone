@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { GetStaticPaths, GetStaticProps,  } from 'next'
+import { GetStaticPaths, GetStaticProps, GetServerSideProps } from 'next'
 import TimeAgo from 'react-timeago'
 import { 
     HeartIcon,
@@ -16,25 +16,25 @@ interface Props {
     tweet: Tweet[]
 }
 
-export const getStaticPaths : GetStaticPaths = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getTweets`)
-    const data = await res.json();
-    const tweets: Tweet[] = data.tweets;
+// export const getStaticPaths : GetStaticPaths = async () => {
+//     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getTweets`)
+//     const data = await res.json();
+//     const tweets: Tweet[] = data.tweets;
 
-    const paths = tweets.map((tweet: Tweet) => {
-        return {
-            params: { id: tweet._id }
-        }
-    })
+//     const paths = tweets.map((tweet: Tweet) => {
+//         return {
+//             params: { id: tweet._id }
+//         }
+//     })
 
-    return {
-        paths,
-        fallback:  false
-    }
-}
+//     return {
+//         paths,
+//         fallback:  false
+//     }
+// }
 
-export const getStaticProps : GetStaticProps = async (context: any) => {
-    const id = context.params.id;
+export const getServerSideProps : GetServerSideProps = async (context: any) => {
+    const id = context.params;
         
     const tweetQuery = `*[_id == $tweetId] {
         _id,
