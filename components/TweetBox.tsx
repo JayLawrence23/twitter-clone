@@ -33,11 +33,21 @@ function TweetBox({ setTweets }: Props) {
         setImageUrlBoxIsOpen(false);
     }
 
+    const picArr = new Array();
+    picArr[0] = "https://pbs.twimg.com/media/Fe_RRtFX0AAbGy7?format=jpg&name=4096x4096";
+    picArr[1] = "https://pbs.twimg.com/media/FeqzGcAXkAEXF_k?format=jpg&name=4096x4096";
+    picArr[2] = "https://pbs.twimg.com/media/FeeI-DqWIAQqbtA?format=jpg&name=4096x4096";
+    picArr[3] = "https://pbs.twimg.com/media/FeT2JH2XwAAdxuW?format=jpg&name=4096x4096";
+    picArr[4] = "https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large";
+    picArr[5] = "https://pbs.twimg.com/media/FceDu3ZWYAEI-5C?format=jpg&name=large";
+    let pic = Math.floor(6*Math.random())
+
+
     const postTweet = async () => {
         const tweetInfo: TweetBody = {
             text: input,
             username: session?.user?.name || "Unknown User",
-            profileImg: session?.user?.image || 'https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large',
+            profileImg: session?.user?.image || picArr[pic],
             image: image,
         }
 
