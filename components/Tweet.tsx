@@ -24,6 +24,15 @@ function Tweet({ tweet }: Props) {
     
     const { data: session } = useSession();
 
+    const picArr = new Array();
+    picArr[0] = "https://pbs.twimg.com/media/Fe_RRtFX0AAbGy7?format=jpg&name=4096x4096";
+    picArr[1] = "https://pbs.twimg.com/media/FeqzGcAXkAEXF_k?format=jpg&name=4096x4096";
+    picArr[2] = "https://pbs.twimg.com/media/FeeI-DqWIAQqbtA?format=jpg&name=4096x4096";
+    picArr[3] = "https://pbs.twimg.com/media/FeT2JH2XwAAdxuW?format=jpg&name=4096x4096";
+    picArr[4] = "https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large";
+    picArr[5] = "https://pbs.twimg.com/media/FceDu3ZWYAEI-5C?format=jpg&name=large";
+    let pic = Math.floor(6*Math.random())
+
     const refreshComments = async () => {
         const comments: Comment[] = await fetchComments(tweet._id);
         setComments(comments);
@@ -43,7 +52,7 @@ function Tweet({ tweet }: Props) {
             comment: input,
             tweetId: tweet._id,
             username: session?.user?.name || 'Unknown User',
-            profileImg: session?.user?.image || 'https://links.papareact.com/gll',
+            profileImg: session?.user?.image || picArr[pic],
         }
 
         const result = await fetch(`/api/addComment`, {
