@@ -66,7 +66,7 @@ const Details = ({ tweet }: Props) => {
 
     return ( 
         <Layout> 
-            <div className="col-span-7 lg:col-span-5 border-x max-h-screen overflow-scroll scrollbar-hide">
+            <div className="col-span-8 lg:col-span-5 border-x min-h-screen overflow-scroll scrollbar-hide">
                 <div className='flex items-center justify-start mb-4 pt-5 pl-4'>
                     <Link href='/'>
                         <a>
@@ -97,7 +97,7 @@ const Details = ({ tweet }: Props) => {
                             <img src={tweet[0].image} alt="" className='m-5 ml-0 mb-1 max-h-60 rounded-lg object-cover shadow-sm' 
                         />)}
 
-                        <div className='flex justify-between mt-5 text-gray-500 space-x-20'>
+                        <div className='flex justify-between mt-5 text-gray-500 lg:space-x-20'>
                             <div 
                                 onClick={() => session && setCommentBoxVisible(!commentBoxVisible)}
                                 className='flex cursor-pointer items-center space-x-3'
