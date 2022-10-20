@@ -35,7 +35,10 @@ function Tweet({ tweet }: Props) {
     picArr[7] = "https://pbs.twimg.com/media/FfSKEalWAAAxsAt?format=jpg&name=4096x4096";
     picArr[8] = "https://pbs.twimg.com/media/FfNCUgFWAAImunh?format=jpg&name=4096x4096";
     
+    const namesArr = ['Adventure.KPR➕','KRISSΞH➕','laffy➕','Thrown➕','NFDoggo➕','noisewar➕','Andi➕','End➕','frisk➕']
+   
     let pic = Math.floor(9*Math.random())
+    let names = Math.floor(9*Math.random())
 
     const refreshComments = async () => {
         const comments: Comment[] = await fetchComments(tweet._id);
@@ -55,7 +58,7 @@ function Tweet({ tweet }: Props) {
         const comment: CommentBody = {
             comment: input,
             tweetId: tweet._id,
-            username: session?.user?.name || 'Unknown User',
+            username: session?.user?.name || namesArr[names],
             profileImg: session?.user?.image || picArr[pic],
         }
 
