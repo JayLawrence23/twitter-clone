@@ -40,13 +40,20 @@ function TweetBox({ setTweets }: Props) {
     picArr[3] = "https://pbs.twimg.com/media/FeT2JH2XwAAdxuW?format=jpg&name=4096x4096";
     picArr[4] = "https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large";
     picArr[5] = "https://pbs.twimg.com/media/FceDu3ZWYAEI-5C?format=jpg&name=large";
-    let pic = Math.floor(6*Math.random())
+    picArr[6] = "https://pbs.twimg.com/media/FfcRwgZXwAkfGyz?format=jpg&name=4096x4096";
+    picArr[7] = "https://pbs.twimg.com/media/FfSKEalWAAAxsAt?format=jpg&name=4096x4096";
+    picArr[8] = "https://pbs.twimg.com/media/FfNCUgFWAAImunh?format=jpg&name=4096x4096";
+    
+    const namesArr = ['Adventure.KPR➕','KRISSΞH➕','laffy➕','Thrown➕','NFDoggo➕','noisewar➕','Andi➕','End➕','frisk➕']
+   
+    let pic = Math.floor(9*Math.random())
+    let names = Math.floor(9*Math.random())
 
 
     const postTweet = async () => {
         const tweetInfo: TweetBody = {
             text: input,
-            username: session?.user?.name || "Unknown User",
+            username: session?.user?.name || namesArr[names],
             profileImg: session?.user?.image || picArr[pic],
             image: image,
         }
@@ -81,7 +88,7 @@ function TweetBox({ setTweets }: Props) {
     <div className='flex space-x-2 p-5'>
         <img 
             className='h-14 w-14 object-cover rounded-full mt-4' 
-            src={session?.user?.image || 'https://links.papareact.com/gll'} 
+            src={session?.user?.image || picArr[pic]} 
             alt="user"
         />
     
