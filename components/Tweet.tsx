@@ -31,7 +31,11 @@ function Tweet({ tweet }: Props) {
     picArr[3] = "https://pbs.twimg.com/media/FeT2JH2XwAAdxuW?format=jpg&name=4096x4096";
     picArr[4] = "https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large";
     picArr[5] = "https://pbs.twimg.com/media/FceDu3ZWYAEI-5C?format=jpg&name=large";
-    let pic = Math.floor(6*Math.random())
+    picArr[6] = "https://pbs.twimg.com/media/FfcRwgZXwAkfGyz?format=jpg&name=4096x4096";
+    picArr[7] = "https://pbs.twimg.com/media/FfSKEalWAAAxsAt?format=jpg&name=4096x4096";
+    picArr[8] = "https://pbs.twimg.com/media/FfNCUgFWAAImunh?format=jpg&name=4096x4096";
+    
+    let pic = Math.floor(9*Math.random())
 
     const refreshComments = async () => {
         const comments: Comment[] = await fetchComments(tweet._id);
