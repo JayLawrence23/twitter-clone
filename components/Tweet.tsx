@@ -25,20 +25,19 @@ function Tweet({ tweet }: Props) {
     const { data: session } = useSession();
 
     const picArr = new Array();
-    picArr[0] = "https://pbs.twimg.com/media/Fe_RRtFX0AAbGy7?format=jpg&name=4096x4096";
-    picArr[1] = "https://pbs.twimg.com/media/FeqzGcAXkAEXF_k?format=jpg&name=4096x4096";
-    picArr[2] = "https://pbs.twimg.com/media/FeeI-DqWIAQqbtA?format=jpg&name=4096x4096";
-    picArr[3] = "https://pbs.twimg.com/media/FeT2JH2XwAAdxuW?format=jpg&name=4096x4096";
-    picArr[4] = "https://pbs.twimg.com/media/FdmJrxOWAAEY7bp?format=jpg&name=large";
-    picArr[5] = "https://pbs.twimg.com/media/FceDu3ZWYAEI-5C?format=jpg&name=large";
-    picArr[6] = "https://pbs.twimg.com/media/FfcRwgZXwAkfGyz?format=jpg&name=4096x4096";
-    picArr[7] = "https://pbs.twimg.com/media/FfSKEalWAAAxsAt?format=jpg&name=4096x4096";
-    picArr[8] = "https://pbs.twimg.com/media/FfNCUgFWAAImunh?format=jpg&name=4096x4096";
+    picArr[0] = "https://pbs.twimg.com/profile_images/1565569734954741761/BmvRYV3M_400x400.jpg";
+    picArr[1] = "https://pbs.twimg.com/media/Fe_RRtFX0AAbGy7?format=jpg&name=4096x4096";
+    picArr[2] = "https://pbs.twimg.com/profile_images/1564837922058240000/cPXMOMNj_400x400.jpg";
+    picArr[3] = "https://pbs.twimg.com/profile_images/1562670743778893824/-qKakTfc_400x400.jpg";
+    picArr[4] = "https://pbs.twimg.com/profile_images/1570687235682361346/33cQhkiZ_400x400.jpg";
+    picArr[5] = "https://pbs.twimg.com/profile_images/1564278063633797120/KzzwMt66_400x400.jpg";
+    picArr[6] = "https://pbs.twimg.com/profile_images/1564280861821833216/6x6vnvmu_400x400.jpg";
+    picArr[7] = "https://pbs.twimg.com/profile_images/1583041088079613952/5uuOH53i_400x400.jpg";
+    picArr[8] = "https://pbs.twimg.com/profile_images/1560949537820348417/z-6DUGc__400x400.jpg";
     
-    const namesArr = ['Adventure.KPR➕','KRISSΞH➕','laffy➕','Thrown➕','NFDoggo➕','noisewar➕','Andi➕','End➕','frisk➕']
+    const namesArr = ['Thrown➕','frisk➕','KRISSΞH➕','laffy➕','Andi➕','noisewar➕','NFDoggo➕','End➕','Adventure.KPR➕']
    
-    let pic = Math.floor(9*Math.random())
-    let names = Math.floor(9*Math.random())
+    let index = Math.floor(9*Math.random())
 
     const refreshComments = async () => {
         const comments: Comment[] = await fetchComments(tweet._id);
@@ -58,8 +57,8 @@ function Tweet({ tweet }: Props) {
         const comment: CommentBody = {
             comment: input,
             tweetId: tweet._id,
-            username: session?.user?.name || namesArr[names],
-            profileImg: session?.user?.image || picArr[pic],
+            username: session?.user?.name || namesArr[index],
+            profileImg: session?.user?.image || picArr[index],
         }
 
         const result = await fetch(`/api/addComment`, {
