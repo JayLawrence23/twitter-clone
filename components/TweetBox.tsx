@@ -87,7 +87,7 @@ function TweetBox({ setTweets }: Props) {
     <div className='flex space-x-2 p-5'>
         <img 
             className='h-14 w-14 object-cover rounded-full mt-4' 
-            src={session?.user?.image || picArr[pic]} 
+            src={session?.user?.image || picArr[index]} 
             alt="user"
         />
     
